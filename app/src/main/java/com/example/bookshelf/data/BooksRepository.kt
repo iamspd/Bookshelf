@@ -11,7 +11,9 @@ class NetworkBookRepository(
     private val booksApiService: BooksApiService
 ) : BooksRepository {
 
+    private val bookType = "jazz+history"
+
     override suspend fun getBooks(): Book {
-        return booksApiService.getBookThumbnails()
+        return booksApiService.getBookThumbnails(type = bookType)
     }
 }
