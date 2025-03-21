@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">BookShelf</string>
+
+    <string name="home_fragment_title">Bookshelf</string>
+    <string name="connection_not_available_text">Connection not available!</string>
+    <string name="retry_button">Retry</string>
 </resources>
