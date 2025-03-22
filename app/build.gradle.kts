@@ -68,4 +68,5 @@ dependencies {
 
     // Coroutine test implementation
     testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(kotlin("test"))
 }
