@@ -4,4 +4,6 @@
     <string name="home_fragment_title">Bookshelf</string>
     <string name="connection_not_available_text">Connection not available!</string>
     <string name="retry_button">Retry</string>
+
+    <string name="loading_image">Loading</string>
 </resources>

@@ -9,7 +9,7 @@ interface AppContainer {
 }
 
 class DefaultContainer : AppContainer {
-    private val baseUrl = "https://www.googleapis.com/books/v1"
+    private val baseUrl = "https://www.googleapis.com/books/v1/"
 
     private val retrofitService = Retrofit.Builder()
         .baseUrl(baseUrl)
