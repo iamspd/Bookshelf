@@ -5,7 +5,7 @@ import com.example.bookshelf.data.AppContainer
 import com.example.bookshelf.data.DefaultContainer
 
 class BookshelfApplication : Application() {
-    private lateinit var container: AppContainer
+    lateinit var container: AppContainer
 
     override fun onCreate() {
         super.onCreate()

@@ -5,4 +5,6 @@
 
     <dimen name="book_thumbnail_height">240dp</dimen>
     <dimen name="book_thumbnail_width">150dp</dimen>
+
+    <dimen name="loading_image_size">140dp</dimen>
 </resources>
