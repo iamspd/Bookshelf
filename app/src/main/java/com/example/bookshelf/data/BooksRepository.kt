@@ -22,6 +22,4 @@ class NetworkBookRepository(
     override suspend fun getBook(item: Item): Book {
         return booksApiService.getBook(id = item.id)
     }
-
-
 }
