@@ -1,6 +1,6 @@
 package com.example.bookshelf.model
 
-data class Books(
+data class Item(
     val id: String,
-    val volumeInfo: VolumeInfo
+    val selfLink: String
 )

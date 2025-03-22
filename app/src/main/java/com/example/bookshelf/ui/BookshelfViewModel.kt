@@ -11,13 +11,14 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.bookshelf.BookshelfApplication
 import com.example.bookshelf.data.BooksRepository
 import com.example.bookshelf.model.Book
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
 sealed interface AppUiState {
     data object Loading : AppUiState
-    data class Success(val book: Book) : AppUiState
+    data class Success(val books: List<Book>) : AppUiState
     data object Error : AppUiState
 }
 
@@ -36,7 +37,13 @@ class BookshelfViewModel(
 
         viewModelScope.launch {
             appUiState = try {
-                AppUiState.Success(book = booksRepository.getBooks())
+                val searchedItems = async { booksRepository.searchBooks() }.await()
+
+                val books = mutableListOf<Book>()
+                for (i in searchedItems.items.indices) {
+                    books.add(booksRepository.getBook(searchedItems.items[i]))
+                }
+                AppUiState.Success(books = books)
             } catch (e: IOException) {
                 AppUiState.Error
             } catch (e: HttpException) {

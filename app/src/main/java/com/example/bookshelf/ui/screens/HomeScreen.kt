@@ -29,7 +29,6 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.example.bookshelf.R
 import com.example.bookshelf.model.Book
-import com.example.bookshelf.model.Books
 import com.example.bookshelf.model.ImageLinks
 import com.example.bookshelf.model.VolumeInfo
 import com.example.bookshelf.ui.AppUiState
@@ -40,14 +39,14 @@ import com.example.bookshelf.ui.theme.BookShelfTheme
 fun PreviewHomeScreen() {
     BookShelfTheme {
         val books = List(9) {
-            Books(
+            Book(
                 id = "$it",
                 volumeInfo = VolumeInfo(title = "Abc", imageLinks = ImageLinks(imgSrc = ""))
             )
         }
         HomeContent(
             modifier = Modifier.fillMaxSize(),
-            book = Book(books = books)
+            books = books
         )
     }
 }
@@ -68,7 +67,7 @@ fun HomeScreen(
             HomeContent(
                 modifier = modifier,
                 paddingValues = paddingValues,
-                book = appUiState.book
+                books = appUiState.books
             )
         }
 
@@ -123,7 +122,7 @@ fun LoadingScreen(modifier: Modifier = Modifier) {
 @Composable
 fun HomeContent(
     modifier: Modifier = Modifier,
-    book: Book,
+    books: List<Book>,
     paddingValues: PaddingValues = PaddingValues(0.dp)
 ) {
     LazyVerticalGrid(
@@ -133,7 +132,7 @@ fun HomeContent(
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         columns = GridCells.Adaptive(minSize = dimensionResource(R.dimen.book_thumbnail_width)),
     ) {
-        items(book.books, key = { book -> book.id }) { book ->
+        items(books, key = { book -> book.id }) { book ->
 
             val imgUrl =
                 book.volumeInfo.imageLinks?.imgSrc?.replace(oldValue = "http", newValue = "https")
