@@ -12,6 +12,9 @@ Bookshelf is an Android application built with **Kotlin** and **Jetpack Compose*
   - **Main branch**: One implementation.
   - **Feature_v1 branch**: Alternative approach.
 
+## 🏛️ Architecture
+Reply follows **MVVM (Model-View-ViewModel) architecture**, ensuring a clear separation of concerns and scalable code.
+
 ## 📷 Screenshots
 <img src="https://github.com/user-attachments/assets/6f242005-47d2-4f61-8957-2a3b7cb1702a" alt="loading screen" style="width:25%; height:auto;">
 <img src="https://github.com/user-attachments/assets/fb188cca-a637-4ffe-8628-80f5b513ea01" alt="main screen" style="width:25%; height:auto;">
