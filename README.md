@@ -23,12 +23,13 @@ Bookshelf is an Android application built with **Kotlin** and **Jetpack Compose*
 - **Coil** (Image Loading)
 - **ViewModel**
 - **Manual Dependency Injection**
+- **JUnit** (Unit Testing)
 
 ## 🚀 Setup & Installation
 1. Clone the repository:
    
    ```sh
-   git clone https://github.com/your-username/bookshelf.git
+   git clone https://github.com/your-username/BookshelfApp.git
    ```
 3. Open the project in **Android Studio**.
 4. Build and run the app on an emulator or physical device.
