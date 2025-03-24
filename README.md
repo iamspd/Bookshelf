@@ -4,7 +4,8 @@ Bookshelf is an Android application built with **Kotlin** and **Jetpack Compose*
 
 ## ✨ Features
 - Fetches book data from the [Google Books API](https://www.googleapis.com/books/v1/volumes?q=jazz+history).
-- Displays book covers using **Coil**.
+- Loads the book covers using **Coil**.
+- Displays the images in **LazyGridColumn** compose. 
 - Uses **ViewModel** for state management.
 - Implements **manual dependency injection**.
 - Two different approaches to API requests:
