@@ -11,7 +11,6 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.bookshelf.BookshelfApplication
 import com.example.bookshelf.data.BooksRepository
 import com.example.bookshelf.model.Book
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
@@ -37,7 +36,7 @@ class BookshelfViewModel(
 
         viewModelScope.launch {
             appUiState = try {
-                val searchedItems = async { booksRepository.searchBooks() }.await()
+                val searchedItems = booksRepository.searchBooks()
 
                 val books = mutableListOf<Book>()
                 for (i in searchedItems.items.indices) {
